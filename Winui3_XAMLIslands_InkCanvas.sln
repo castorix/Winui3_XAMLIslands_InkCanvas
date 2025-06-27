@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.36105.23 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winui3_XAMLIslands_InkCanvas", "Winui3_XAMLIslands_InkCanvas.csproj", "{148EF72C-0957-4AC6-A48E-8E841F0E33D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728} = {5E2CC8E2-7A91-48AA-BE58-1B979E11D728}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAMLIslandsInkCanvas", "XAMLIslandsInkCanvas\XAMLIslandsInkCanvas.vcxproj", "{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|ARM64.Build.0 = Debug|ARM64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|x64.ActiveCfg = Debug|x64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|x64.Build.0 = Debug|x64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|x64.Deploy.0 = Debug|x64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|x86.ActiveCfg = Debug|x86
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|x86.Build.0 = Debug|x86
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Debug|x86.Deploy.0 = Debug|x86
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|ARM64.ActiveCfg = Release|ARM64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|ARM64.Build.0 = Release|ARM64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|ARM64.Deploy.0 = Release|ARM64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|x64.ActiveCfg = Release|x64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|x64.Build.0 = Release|x64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|x64.Deploy.0 = Release|x64
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|x86.ActiveCfg = Release|x86
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|x86.Build.0 = Release|x86
+		{148EF72C-0957-4AC6-A48E-8E841F0E33D1}.Release|x86.Deploy.0 = Release|x86
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Debug|ARM64.ActiveCfg = Debug|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Debug|ARM64.Build.0 = Debug|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Debug|x64.ActiveCfg = Debug|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Debug|x64.Build.0 = Debug|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Debug|x86.ActiveCfg = Debug|Win32
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Debug|x86.Build.0 = Debug|Win32
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Release|ARM64.ActiveCfg = Release|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Release|ARM64.Build.0 = Release|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Release|x64.ActiveCfg = Release|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Release|x64.Build.0 = Release|x64
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Release|x86.ActiveCfg = Release|Win32
+		{5E2CC8E2-7A91-48AA-BE58-1B979E11D728}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {006778C3-C817-4F0A-B18C-6E642C5701A8}
+	EndGlobalSection
+EndGlobal

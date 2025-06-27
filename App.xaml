@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="Winui3_XAMLIslands_InkCanvas.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Winui3_XAMLIslands_InkCanvas">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />-->
+                <XamlControlsResources>
+                    <XamlControlsResources.MergedDictionaries>
+                        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                        <ResourceDictionary>
+                            <!--<x:Double x:Key="ContentDialogMaxWidth">800</x:Double>-->
+                            <!--OK-->
+                            <x:Double x:Key="ContentDialogMinWidth">500</x:Double>                           
+                        </ResourceDictionary>
+                    </XamlControlsResources.MergedDictionaries>
+                </XamlControlsResources>
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

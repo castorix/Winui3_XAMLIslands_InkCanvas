@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Winui3_XAMLIslands_InkCanvas.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Winui3_XAMLIslands_InkCanvas"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:ContainerPanel="using:WinUI3_ContainerPanel"
+    mc:Ignorable="d"
+    Title="Winui3_XAMLIslands_InkCanvas">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 0, 0">
+
+            <Button x:Name="buttonGetInkAttributes" Click="buttonGetInkAttributes_Click" VerticalAlignment="Top"
+                     Margin="0, 10, 0, 0">Get Ink Attributes</Button>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0, 5, 0, 0">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0, 0, 0, 0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                        <Rectangle x:Name="rectInkDrawingColor" Margin="10, 2, 0, 0" Fill="Black" Width="20" Height="20" Stroke="Gray" StrokeThickness="1" 
+                               RadiusX="0" RadiusY="0" Tapped="RectInkDrawingColor_Tapped" />
+
+                        <TextBlock Margin="10, 12, 0, 0">
+                        Width :
+                        </TextBlock>
+                        <Slider x:Name="sliderPenTipWidth" Height="32" Width="200" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 4, 10, 0"
+                            TickFrequency="1" TickPlacement="Inline" Maximum="64" Minimum="1" StepFrequency="1"
+                            Value="{x:Bind PenTipWidth, Mode=TwoWay}">
+                        </Slider>
+
+                        <TextBlock Margin="10, 12, 0, 0">
+                        Height :
+                        </TextBlock>
+                        <Slider x:Name="sliderPenTipHeight" Height="32" Width="200" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 4, 10, 0"
+                            TickFrequency="1" TickPlacement="Inline" Maximum="64" Minimum="1" StepFrequency="1"
+                            Value="{x:Bind PenTipHeight, Mode=TwoWay}">
+                        </Slider>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                        <ToggleSwitch x:Name="tsPenTipShape" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 0, 0, 0"
+                                  OffContent="Rectangle" OnContent="Circle" Toggled="tsPenTipShape_Toggled" IsOn="True">
+                            <ToolTipService.ToolTip>
+                                <ToolTip Content="Identifies the shape of the PenTip" Placement="Bottom" Background="LightYellow" Foreground="Black"/>
+                            </ToolTipService.ToolTip>
+                        </ToggleSwitch>
+
+                        <ToggleSwitch x:Name="tsPencil" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 0, 0, 0"
+                                  OffContent="Not Pencil" OnContent="Pencil" Toggled="tsPencil_Toggled">
+                            <ToolTipService.ToolTip>
+                                <ToolTip Content="Pencil or Pen/Highlighter" Placement="Bottom" Background="LightYellow" Foreground="Black"/>
+                            </ToolTipService.ToolTip>
+                        </ToggleSwitch>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Visibility="{Binding IsOn, ElementName=tsPencil}">
+                            <TextBlock Margin="10, 12, 0, 0">
+                            Opacity :
+                            </TextBlock>
+                            <Slider x:Name="sliderPencilOpacity" Height="32" Width="200" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 4, 10, 0"
+                                TickFrequency="0.1" TickPlacement="Inline" Maximum="5.0" Minimum="0.01" StepFrequency="0.1"
+                                Value="{x:Bind PencilOpacity, Mode=TwoWay}">
+                            </Slider>
+                        </StackPanel>
+
+                        <ToggleSwitch x:Name="tsHighlighter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 0, 0, 0"
+                                  OffContent="Not Highlighter" OnContent="Highlighter" Toggled="tsHighlighter_Toggled">
+                            <ToolTipService.ToolTip>
+                                <ToolTip Content="Highlighter or not Highlighter" Placement="Bottom" Background="LightYellow" Foreground="Black"/>
+                            </ToolTipService.ToolTip>
+                        </ToggleSwitch>
+                    </StackPanel>
+                </StackPanel>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Row 1 -->
+                    <NumberBox x:Name="M11" Grid.Row="0" Grid.Column="0" Width="100" Margin="5" PlaceholderText="M11"/>
+                    <NumberBox x:Name="M12" Grid.Row="0" Grid.Column="1" Width="100" Margin="5" PlaceholderText="M12"/>
+
+                    <!-- Row 2 -->
+                    <NumberBox x:Name="M21" Grid.Row="1" Grid.Column="0" Width="100" Margin="5" PlaceholderText="M21"/>
+                    <NumberBox x:Name="M22" Grid.Row="1" Grid.Column="1" Width="100" Margin="5" PlaceholderText="M22"/>
+
+                    <!-- Row 3 (M31 and M32 are not editable) -->
+                    <NumberBox x:Name="M31" Grid.Row="2" Grid.Column="0" Width="100" Margin="5" Value="0" IsEnabled="False"/>
+                    <NumberBox x:Name="M32" Grid.Row="2" Grid.Column="1" Width="100" Margin="5" Value="0" IsEnabled="False"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">                       
+                        <Hyperlink NavigateUri="https://graphicmaths.com/pure/matrices/matrix-2d-transformations">
+                            2D Affine Transform
+                        </Hyperlink>
+                    </TextBlock>
+                </Grid>    
+
+            </StackPanel>
+
+            <Button x:Name="buttonSetInkAttributes"  Click="buttonSetInkAttributes_Click" VerticalAlignment="Top" 
+                    Margin="0, 10, 0, 0">Set Ink Attributes</Button>
+        </StackPanel>
+
+        <ContainerPanel:ContainerPanel x:Name="cp1" Grid.Row="1" Margin="10, 10, 10, 10" >
+        </ContainerPanel:ContainerPanel>
+
+        <ScrollViewer x:Name="svText" Grid.Row="2" Height="100"  Margin="10, 0, 10, 10">
+            <ScrollViewer.Resources>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Background" Value="LightBlue"/>
+                </Style>
+            </ScrollViewer.Resources>
+            <StackPanel Background="Blue">
+                <TextBlock x:Name="tbRecognizedText" IsTextSelectionEnabled="True"
+                           Text="&lt;Recognized text>"
+                           Foreground="Yellow"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Winui3_XAMLIslands_InkCanvas (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Winui3_XAMLIslands_InkCanvas (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
